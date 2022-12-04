@@ -1,7 +1,10 @@
 ﻿using LmsCopy.Web.Data;
 using LmsCopy.Web.Entites;
+using LmsCopy.Web.Models;
+using LmsCopy.Web.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Text;
 
 namespace LmsCopy.Web.Controllers;
 
@@ -76,5 +79,15 @@ public class SubjectController : Controller
     {
         var subjects = _context.Subjects.ToList();
         return View(subjects);
+    }
+
+    [HttpGet]
+    [Authorize(Roles = UserRole.Professor)]
+    public IActionResult GenerateReport(String reportType)
+    {
+        var fileReport = FileReportFactory.GetServiceIndexRequest(reportType, "subjects"); 
+
+        var file = fileReport.GenerateReport<Subject>(_context.Subjects.ToList());
+        return File(file.Data, file.ContentType, file.FileName);
     }
 }
