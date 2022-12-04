@@ -1,0 +1,43 @@
+﻿@model List<MarkProfessorModel>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1 class="display-4">Professor, your marks!</h1>
+<a type="button" class="btn btn-primary" asp-area="" asp-controller="Mark" asp-action="Create">Create mark</a>
+<div class="table-responsive">
+    <table class="table table-bordered table-condensed table-striped table-hover sortable">
+        @if (Model.Count == 0)
+        {
+            <tr>
+                <td colspan="10">No marks found.</td>
+            </tr>
+        }
+        else
+        {
+            <thead>
+            <tr>
+                <th data-defaultsign="AZ">Subject</th>
+                <th data-defaultsign="AZ">Student name</th>
+                <th data-defaultsign="0-10">Mark</th>
+                <th data-defaultsign="AZ">Edit</th>
+                <th data-defaultsign="AZ">Delete</th>
+            </tr>
+            </thead>
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.SubjectName</td>
+                    <td>@item.StudentName</td>
+                    <td>@item.Value</td>
+                    <td>
+                        <a type="button" class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                    </td>
+                    <td>
+                        <a type="button" class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+</div>

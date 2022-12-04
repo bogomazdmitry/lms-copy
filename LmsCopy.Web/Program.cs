@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using LmsCopy.Web.Data;
 using LmsCopy.Web.Entites;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,14 +12,33 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<User>(options =>
-{
-    options.SignIn.RequireConfirmedAccount = false;
-    options.User.RequireUniqueEmail = true;
-})
+    {
+        options.SignIn.RequireConfirmedAccount = false;
+        options.User.RequireUniqueEmail = true;
+    })
+    .AddRoles<UserRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
+
+builder.Services.AddAuthentication()
+    .AddCookie(options =>
+    {
+        options.LoginPath = "/Account/Login/";
+        options.AccessDeniedPath = "/Shared/AuthoriseError/";
+    });
+
+builder.Services.AddScoped<IUserClaimsPrincipalFactory<User>, UserClaimsPrincipalFactory<User, UserRole>>();
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
+
+var serviceProvider = builder.Services.BuildServiceProvider();
+var roleManager = serviceProvider.GetRequiredService<RoleManager<UserRole>>();
+
+if (!await roleManager.RoleExistsAsync(UserRole.Professor))
+{
+    await roleManager.CreateAsync(new UserRole(UserRole.Professor));
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -41,7 +61,7 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Mark}/{action=Index}/{id?}");
 app.MapRazorPages();
 
 app.Run();

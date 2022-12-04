@@ -8,13 +8,13 @@ public class Mark
     
     public Guid StudentId { get; set; }
     
-    public virtual User? Student { get; set; }
+    public virtual User Student { get; set; }
     
     public Guid ProfessorId { get; set; }
     
-    public virtual User? Professor { get; set; }
+    public virtual User Professor { get; set; }
     
     public Guid SubjectId { get; set; }
     
-    public virtual Subject? Subject { get; set; }
+    public virtual Subject Subject { get; set; }
 }
