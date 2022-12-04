@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using LmsCopy.Web.Data;
 using LmsCopy.Web.Entites;
+using LmsCopy.Web.Services;
 using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -29,6 +30,7 @@ builder.Services.AddAuthentication()
 builder.Services.AddScoped<IUserClaimsPrincipalFactory<User>, UserClaimsPrincipalFactory<User, UserRole>>();
 
 builder.Services.AddControllersWithViews();
+builder.Services.AddSingleton<SettingsService>();
 
 var app = builder.Build();
 

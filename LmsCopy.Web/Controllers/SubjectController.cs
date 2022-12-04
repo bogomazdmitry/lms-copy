@@ -12,9 +12,12 @@ public class SubjectController : Controller
 {
     private readonly ApplicationDbContext _context;
     
-    public SubjectController(ApplicationDbContext context)
+    private readonly SettingsService _settings;
+
+    public SubjectController(ApplicationDbContext context, SettingsService settings)
     {
         _context = context;
+        _settings = settings;
     }
     
     [HttpGet]
@@ -85,7 +88,7 @@ public class SubjectController : Controller
     [Authorize(Roles = UserRole.Professor)]
     public IActionResult GenerateReport(String reportType)
     {
-        var fileReport = FileReportFactory.GetServiceIndexRequest(reportType, "subjects"); 
+        var fileReport = FileReportFactory.GetServiceIndexRequest(reportType, _settings.SubjectReportName); 
 
         var file = fileReport.GenerateReport<Subject>(_context.Subjects.ToList());
         return File(file.Data, file.ContentType, file.FileName);
