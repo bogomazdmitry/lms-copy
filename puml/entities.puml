@@ -1,0 +1,6 @@
+@startuml
+!include .\\Entites\Mark.puml
+!include .\\Entites\Subject.puml
+!include .\\Entites\User.puml
+!include .\\Entites\UserRole.puml
+@enduml

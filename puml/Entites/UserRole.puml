@@ -1,0 +1,10 @@
+@startuml
+class UserRole {
+    + UserRole()
+    + UserRole(role:string)
+    + <<const>> Professor : string = "Professor"
+}
+class "IdentityRole`1"<T> {
+}
+"IdentityRole`1" <|-- UserRole
+@enduml

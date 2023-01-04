@@ -1,0 +1,4 @@
+@startuml
+!include .\\Controllers\MarkController.puml
+!include .\\Controllers\SubjectController.puml
+@enduml

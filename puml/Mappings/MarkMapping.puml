@@ -1,0 +1,8 @@
+@startuml
+class MarkMapping <<static>> {
+    + {static} ToMark(markStudentModel:MarkStudentModel) : Mark
+    + {static} ToMarkStudentModel(mark:Mark) : MarkStudentModel
+    + {static} ToMark(markProfessorModel:MarkProfessorModel) : Mark
+    + {static} ToMarkProfessorModel(mark:Mark) : MarkProfessorModel
+}
+@enduml

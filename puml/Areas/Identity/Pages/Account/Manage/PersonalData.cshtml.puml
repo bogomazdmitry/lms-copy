@@ -1,0 +1,7 @@
+@startuml
+class PersonalDataModel {
+    + PersonalDataModel(userManager:UserManager<User>, logger:ILogger<PersonalDataModel>)
+    + <<async>> OnGet() : Task<IActionResult>
+}
+PageModel <|-- PersonalDataModel
+@enduml

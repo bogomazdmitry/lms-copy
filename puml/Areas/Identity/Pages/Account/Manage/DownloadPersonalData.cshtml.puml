@@ -1,0 +1,8 @@
+@startuml
+class DownloadPersonalDataModel {
+    + DownloadPersonalDataModel(userManager:UserManager<User>, logger:ILogger<DownloadPersonalDataModel>)
+    + OnGet() : IActionResult
+    + <<async>> OnPostAsync() : Task<IActionResult>
+}
+PageModel <|-- DownloadPersonalDataModel
+@enduml

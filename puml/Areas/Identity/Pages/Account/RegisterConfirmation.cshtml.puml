@@ -1,0 +1,10 @@
+@startuml
+class RegisterConfirmationModel {
+    + RegisterConfirmationModel(userManager:UserManager<User>, sender:IEmailSender)
+    + Email : string <<get>> <<set>>
+    + DisplayConfirmAccountLink : bool <<get>> <<set>>
+    + EmailConfirmationUrl : string <<get>> <<set>>
+    + <<async>> OnGetAsync(email:string, returnUrl:string) : Task<IActionResult>
+}
+PageModel <|-- RegisterConfirmationModel
+@enduml

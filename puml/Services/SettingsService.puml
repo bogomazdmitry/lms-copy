@@ -1,0 +1,5 @@
+@startuml
+class SettingsService {
+    + SubjectReportName : string = "subjects"
+}
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+!include .\\Mappings\MarkMapping.puml
+!include .\\Areas\Identity\Pages\Error.cshtml.puml
+!include .\\Models\ErrorViewModel.puml
+!include .\\Models\FileModel.puml
+!include .\\Models\MarkProfessorModel.puml
+!include .\\Models\MarkStudentModel.puml
+@enduml

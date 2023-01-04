@@ -1,0 +1,7 @@
+@startuml
+class ShowRecoveryCodesModel {
+    + StatusMessage : string <<get>> <<set>>
+    + OnGet() : IActionResult
+}
+PageModel <|-- ShowRecoveryCodesModel
+@enduml

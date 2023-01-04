@@ -1,0 +1,7 @@
+@startuml
+class JsonFileReport {
+    + FileName : string <<get>> <<set>>
+    + GenerateReport(items:List<T>) : FileModel
+}
+IFileReport <|-- JsonFileReport
+@enduml

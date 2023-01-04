@@ -1,0 +1,7 @@
+@startuml
+class XmlFileReport {
+    + FileName : string <<get>> <<set>>
+    + GenerateReport(items:List<T>) : FileModel
+}
+IFileReport <|-- XmlFileReport
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class Subject {
+    + Name : string <<get>> <<set>>
+}
+@enduml

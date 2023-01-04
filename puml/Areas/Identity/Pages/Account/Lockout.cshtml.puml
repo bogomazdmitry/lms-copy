@@ -1,0 +1,6 @@
+@startuml
+class LockoutModel {
+    + OnGet() : void
+}
+PageModel <|-- LockoutModel
+@enduml

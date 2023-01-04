@@ -1,0 +1,5 @@
+@startuml
+class InitialCreate <<partial>> {
+}
+Migration <|-- InitialCreate
+@enduml

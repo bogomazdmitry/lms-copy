@@ -1,0 +1,8 @@
+@startuml
+class Mark {
+    + Value : int <<get>> <<set>>
+}
+Mark -->  User
+Mark -->  User
+Mark --> Subject
+@enduml

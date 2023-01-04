@@ -1,0 +1,9 @@
+@startuml
+class User {
+}
+class "IdentityUser`1"<T> {
+}
+"IdentityUser`1" <|-- User
+User o--> "StudentMarks<Mark>"
+User o-> "ProfessorMarks<Mark>"
+@enduml

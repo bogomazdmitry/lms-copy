@@ -1,0 +1,7 @@
+@startuml
+class MarkProfessorModel {
+    + Value : int <<get>> <<set>>
+    + <<virtual>> StudentName : string <<get>> <<set>>
+    + <<virtual>> SubjectName : string <<get>> <<set>>
+}
+@enduml

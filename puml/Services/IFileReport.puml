@@ -1,0 +1,6 @@
+@startuml
+interface IFileReport {
+    + FileName : string <<get>> <<set>>
+    + GenerateReport(items:List<T>) : FileModel
+}
+@enduml

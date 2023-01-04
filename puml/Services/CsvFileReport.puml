@@ -1,0 +1,7 @@
+@startuml
+class CsvFileReport {
+    + FileName : string <<get>> <<set>>
+    + GenerateReport(items:List<T>) : FileModel
+}
+IFileReport <|-- CsvFileReport
+@enduml

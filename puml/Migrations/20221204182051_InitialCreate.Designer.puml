@@ -1,0 +1,4 @@
+@startuml
+class InitialCreate <<partial>> {
+}
+@enduml

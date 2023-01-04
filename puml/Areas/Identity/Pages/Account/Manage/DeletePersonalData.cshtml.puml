@@ -1,0 +1,14 @@
+@startuml
+class DeletePersonalDataModel {
+    + DeletePersonalDataModel(userManager:UserManager<User>, signInManager:SignInManager<User>, logger:ILogger<DeletePersonalDataModel>)
+    + RequirePassword : bool <<get>> <<set>>
+    + <<async>> OnGet() : Task<IActionResult>
+    + <<async>> OnPostAsync() : Task<IActionResult>
+}
+class InputModel {
+    + Password : string <<get>> <<set>>
+}
+PageModel <|-- DeletePersonalDataModel
+DeletePersonalDataModel --> "Input" InputModel
+DeletePersonalDataModel +-- InputModel
+@enduml

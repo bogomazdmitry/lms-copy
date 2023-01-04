@@ -1,0 +1,24 @@
+@startuml
+!include .\\Controllers\MarkController.puml
+!include .\\Controllers\SubjectController.puml
+!include .\\Data\ApplicationDbContext.puml
+!include .\\Entites\Mark.puml
+!include .\\Entites\Subject.puml
+!include .\\Entites\User.puml
+!include .\\Entites\UserRole.puml
+!include .\\Mappings\MarkMapping.puml
+!include .\\Migrations\20221204182051_InitialCreate.puml
+!include .\\Migrations\20221204182051_InitialCreate.Designer.puml
+!include .\\Migrations\ApplicationDbContextModelSnapshot.puml
+!include .\\Models\ErrorViewModel.puml
+!include .\\Models\FileModel.puml
+!include .\\Models\MarkProfessorModel.puml
+!include .\\Models\MarkStudentModel.puml
+!include .\\Services\CsvFileReport.puml
+!include .\\Services\IFileReport.puml
+!include .\\Services\JsonFileReport.puml
+!include .\\Services\ReportFileFactory.puml
+!include .\\Services\SettingsService.puml
+!include .\\Services\XmlFileReport.puml
+!include .\\Areas\Identity\Pages\Error.cshtml.puml
+@enduml

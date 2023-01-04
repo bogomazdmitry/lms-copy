@@ -1,0 +1,5 @@
+@startuml
+class FileReportFactory <<static>> {
+    + {static} GetServiceIndexRequest(fileType:string, fileName:string) : IFileReport
+}
+@enduml

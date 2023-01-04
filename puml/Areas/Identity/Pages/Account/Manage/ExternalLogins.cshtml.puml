@@ -1,0 +1,16 @@
+@startuml
+class ExternalLoginsModel {
+    + ExternalLoginsModel(userManager:UserManager<User>, signInManager:SignInManager<User>, userStore:IUserStore<User>)
+    + ShowRemoveButton : bool <<get>> <<set>>
+    + StatusMessage : string <<get>> <<set>>
+    + <<async>> OnGetAsync() : Task<IActionResult>
+    + <<async>> OnPostRemoveLoginAsync(loginProvider:string, providerKey:string) : Task<IActionResult>
+    + <<async>> OnPostLinkLoginAsync(provider:string) : Task<IActionResult>
+    + <<async>> OnGetLinkLoginCallbackAsync() : Task<IActionResult>
+}
+class "IList`1"<T> {
+}
+PageModel <|-- ExternalLoginsModel
+ExternalLoginsModel --> "CurrentLogins<UserLoginInfo>" "IList`1"
+ExternalLoginsModel --> "OtherLogins<AuthenticationScheme>" "IList`1"
+@enduml

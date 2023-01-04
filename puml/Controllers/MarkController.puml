@@ -1,0 +1,13 @@
+@startuml
+class MarkController {
+    + MarkController(userManager:UserManager<User>, logger:ILogger<MarkController>, context:ApplicationDbContext)
+    + Index() : IActionResult
+    + Create() : IActionResult
+    + <<async>> Create(markModel:MarkProfessorModel) : Task<IActionResult>
+    + Edit(id:Guid) : IActionResult
+    + Edit(markModel:MarkProfessorModel) : IActionResult
+    + Delete(id:Guid) : IActionResult
+    + Error() : IActionResult
+}
+Controller <|-- MarkController
+@enduml

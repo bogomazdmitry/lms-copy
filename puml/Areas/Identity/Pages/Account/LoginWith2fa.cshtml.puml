@@ -1,0 +1,16 @@
+@startuml
+class LoginWith2faModel {
+    + LoginWith2faModel(signInManager:SignInManager<User>, userManager:UserManager<User>, logger:ILogger<LoginWith2faModel>)
+    + RememberMe : bool <<get>> <<set>>
+    + ReturnUrl : string <<get>> <<set>>
+    + <<async>> OnGetAsync(rememberMe:bool, returnUrl:string) : Task<IActionResult>
+    + <<async>> OnPostAsync(rememberMe:bool, returnUrl:string) : Task<IActionResult>
+}
+class InputModel {
+    + TwoFactorCode : string <<get>> <<set>>
+    + RememberMachine : bool <<get>> <<set>>
+}
+PageModel <|-- LoginWith2faModel
+LoginWith2faModel --> "Input" InputModel
+LoginWith2faModel +-- InputModel
+@enduml

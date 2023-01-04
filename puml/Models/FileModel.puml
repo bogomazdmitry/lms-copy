@@ -1,0 +1,6 @@
+@startuml
+class FileModel {
+    + FileName : string <<get>> <<set>>
+    + ContentType : string <<get>> <<set>>
+}
+@enduml

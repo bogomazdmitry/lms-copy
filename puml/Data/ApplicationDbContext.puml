@@ -1,0 +1,12 @@
+@startuml
+class ApplicationDbContext {
+    + ApplicationDbContext(options:DbContextOptions<ApplicationDbContext>)
+}
+class "IdentityDbContext`3"<T1,T2,T3> {
+}
+class "DbSet`1"<T> {
+}
+"IdentityDbContext`3" "<User,UserRole,Guid>" <|-- ApplicationDbContext
+ApplicationDbContext --> "Subjects<Subject>" "DbSet`1"
+ApplicationDbContext --> "Marks<Mark>" "DbSet`1"
+@enduml

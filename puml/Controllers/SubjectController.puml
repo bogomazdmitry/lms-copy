@@ -1,0 +1,13 @@
+@startuml
+class SubjectController {
+    + SubjectController(context:ApplicationDbContext, settings:SettingsService)
+    + Create() : IActionResult
+    + Create(subject:Subject) : IActionResult
+    + Edit(id:Guid) : IActionResult
+    + Edit(subject:Subject) : IActionResult
+    + Delete(id:Guid) : IActionResult
+    + Index() : IActionResult
+    + GenerateReport(reportType:String) : IActionResult
+}
+Controller <|-- SubjectController
+@enduml
