@@ -1,6 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LmsCopy.Web", "LmsCopy.Web\LmsCopy.Web.csproj", "{07B2BF90-884C-43AE-813B-74317A507F31}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LmsCopy.Web", "LmsCopy.Web\LmsCopy.Web.csproj", "{07B2BF90-884C-43AE-813B-74317A507F31}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LmsCopy.Web.Test", "LmsCopy.Web.Test\LmsCopy.Web.Test.csproj", "{5FFA07E7-6ACB-466B-825A-A669609B0F36}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,5 +17,15 @@ Global
 		{07B2BF90-884C-43AE-813B-74317A507F31}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07B2BF90-884C-43AE-813B-74317A507F31}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07B2BF90-884C-43AE-813B-74317A507F31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FFA07E7-6ACB-466B-825A-A669609B0F36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FFA07E7-6ACB-466B-825A-A669609B0F36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FFA07E7-6ACB-466B-825A-A669609B0F36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FFA07E7-6ACB-466B-825A-A669609B0F36}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FAE2EA9E-E907-4BB7-9F4C-E82D29CED3B3}
 	EndGlobalSection
 EndGlobal
