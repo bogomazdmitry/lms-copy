@@ -1,3 +1,3 @@
 # LmsCopy
 
-A simple application to simulate the learning process
+A simple application for univercity to simulate the learning process with Identity and puml schemas.
